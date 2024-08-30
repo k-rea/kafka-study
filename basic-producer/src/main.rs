@@ -17,6 +17,7 @@ struct TicketOrder {
 async fn main() -> Result<()> {
     env_logger::init();
 
+    // TODO: retry, acksの設定
     let producer: FutureProducer = ClientConfig::new()
         .set("bootstrap.servers", "localhost:29092")
         .set("client.id", "basic-producer-1")
