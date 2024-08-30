@@ -48,3 +48,19 @@ kafka-console-consumer --bootstrap-server broker:9092 --topic ird-first-topic --
 ```shell
 kafka-consumer-groups --bootstrap-server broker:9092 --describe --group G1
 ```
+
+## Producerの実装
+project rootでcliにログイン
+```shell
+docker compose exec cli bash
+```
+
+```shell
+kafka-console-consumer --bootstrap-server broker:9092 --topic ticket-order --group G1 --from-beginning
+```
+
+別ターミナルで
+```shell
+cd basic-producer
+RUST_LOG=info cargo run
+```
