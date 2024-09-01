@@ -43,7 +43,7 @@ async fn main() -> Result<()> {
         .send(
             FutureRecord::to(topic)
                 .payload(&payload)
-                .key(&ticket_order.user_id),
+                .key(&ticket_order.order_id),
             Duration::from_secs(0),
         )
         .await;
